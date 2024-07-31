@@ -27,15 +27,18 @@ public class Mod01Vid03_ReverseListOfInt {
                 .collect(Collectors.toCollection(ArrayDeque::new))
                 .descendingIterator()
                 .forEachRemaining(x -> result.add(x));
-
-
         return result;
+    }
 
+    static List<Integer> getReversedSolution02(List<Integer> source) {
+        Collections.reverse(source); //reverses the list passed
+        return source;
+    }
 
-
-
-
-
+    static List<Integer> getReversedSolution03(List<Integer> source) {
+        List<Integer> result = new ArrayList<>(source);  //craate a copy first of the list
+        Collections.reverse(result); //reverses the result list , this does not affect the source list
+        return result;
     }
 
     public static void main(String[] args) {
@@ -46,7 +49,24 @@ public class Mod01Vid03_ReverseListOfInt {
         List<Integer> numbers = Arrays.asList( 7, 17, 13, 19, 5 );
         List<Integer> result = Mod01Vid03_ReverseListOfInt.getReversed(numbers);
 
-        System.out.println("\\result:");
+        System.out.println("\\result1:");
+        result.stream().forEach(System.out::println);
+
+
+
+        numbers = Arrays.asList( 7, 17, 13, 19, 5 );
+        result = Mod01Vid03_ReverseListOfInt.getReversedSolution02(numbers);
+
+        System.out.println("\\result 02:");
+        result.stream().forEach(System.out::println);
+
+
+
+
+        numbers = Arrays.asList( 7, 17, 13, 19, 5 );
+        result = Mod01Vid03_ReverseListOfInt.getReversedSolution03(numbers);
+
+        System.out.println("\\result 03:");
         result.stream().forEach(System.out::println);
     }
 }
