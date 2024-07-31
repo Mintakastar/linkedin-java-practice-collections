@@ -19,7 +19,7 @@ public class Mod01Vid01FindOcurrences {
         return list.length;
         */
         //Arrays.stream(source.split(" ")).forEach(x-> System.out.println(x));
-        source=source.replace(".","");
+        source=source.replaceAll("\\.","");
         long count= Arrays.stream(source.split(" ")).filter( x ->  x.equalsIgnoreCase(word)).count();
         System.out.println(count);
         return (int)count;
@@ -42,6 +42,15 @@ public class Mod01Vid01FindOcurrences {
         word = "here";
         result = Mod01Vid01FindOcurrences.getOccurrences(source, word);
         if(result == 2){
+            System.out.println("This is fine: "+result);
+        }else{
+            System.out.println("Wrong answer "+result);
+        }
+
+        source = "Here is an example. Right here. here.";
+        word = "here";
+        result = Mod01Vid01FindOcurrences.getOccurrences(source, word);
+        if(result == 3){
             System.out.println("This is fine: "+result);
         }else{
             System.out.println("Wrong answer "+result);
