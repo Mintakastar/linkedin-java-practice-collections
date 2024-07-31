@@ -14,9 +14,25 @@ public class Moc01Vid05_calculateAverage {
         return average;
     }
 
+    static double getAverageVideoSolution(List<Integer> source) {
+
+        return source.stream().reduce(0,Integer::sum)/(double)source.size();
+    }
+
     public static void main(String[] args) {
         List<Integer> numbers = Arrays.asList( 7, 17, 13, 19, 5 );
         double result = Moc01Vid05_calculateAverage.getAverage(numbers);
+
+        if(result==12.2){
+            System.out.println("OK");
+        }else {
+            System.out.println("wrong");
+        }
+
+
+
+       numbers = Arrays.asList( 7, 17, 13, 19, 5 );
+        result = Moc01Vid05_calculateAverage.getAverageVideoSolution(numbers);
 
         if(result==12.2){
             System.out.println("OK");
