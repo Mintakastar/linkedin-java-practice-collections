@@ -1,3 +1,5 @@
+package com.raffenio;
+
 import java.util.*;
 public class Mod01Vid01FindOcurrences {
     // Change these boolean values to control whether you see
@@ -17,6 +19,7 @@ public class Mod01Vid01FindOcurrences {
         return list.length;
         */
         //Arrays.stream(source.split(" ")).forEach(x-> System.out.println(x));
+        source=source.replace(".","");
         long count= Arrays.stream(source.split(" ")).filter( x ->  x.equalsIgnoreCase(word)).count();
         System.out.println(count);
         return (int)count;
@@ -24,13 +27,24 @@ public class Mod01Vid01FindOcurrences {
     }
 
     public static void main(String[] args) {
+
         String source = "Here is an example. Right here";
         String word = "here";
         int result = Mod01Vid01FindOcurrences.getOccurrences(source, word);
         if(result == 2){
             System.out.println("This is fine: "+result);
         }else{
-            System.out.println("Wrong ansuer "+result);
+            System.out.println("Wrong answer "+result);
+        }
+
+
+        source = "Here is an example. Right here.";
+        word = "here";
+        result = Mod01Vid01FindOcurrences.getOccurrences(source, word);
+        if(result == 2){
+            System.out.println("This is fine: "+result);
+        }else{
+            System.out.println("Wrong answer "+result);
         }
 
     }
