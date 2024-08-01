@@ -3,6 +3,7 @@ package com.raffenio;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.StringJoiner;
 
 
 /**
@@ -143,6 +144,22 @@ public class Mod01Vid05_calculateAverage_reduceExamples {
                 .reduce(0, Integer::sum);
         //assertThat(result).isEqualTo(65);
         System.out.println("65 is the result: "+resultAge);
+
+
+
+
+
+        List<String> words= new ArrayList<String>();
+        words.add("juan");
+        words.add("gema");
+        words.add("maria");
+
+        StringJoiner sj = new StringJoiner(",","[","]");
+        for (String word : words){
+            sj.add(word);
+        }
+
+        System.out.println("words joned : "+sj.toString());
     }
 
 
